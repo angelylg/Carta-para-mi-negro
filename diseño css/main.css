@@ -1,0 +1,170 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.containers {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px ;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(252, 225, 199);
+}
+
+header h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.content {
+    margin-bottom: 20px;
+}
+
+.media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.media img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    flex: 1 1 45%;
+}
+
+footer p {
+    text-align: center;
+    font-size: 1em;
+    color: #555;
+}
+
+#paragraph {
+    display: inline-block;
+    opacity: 0;
+}
+
+
+
+/* styles.css */
+
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e7e7e7;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto ;
+    padding: 70px 60px 400px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+main {
+    position: relative;
+    text-align: center;
+}
+
+.heartbeat {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    padding-top:200px ;
+    width: 400px; /* Ajusta el tamaño según sea necesario */
+    height: 400px; /* Ajusta el tamaño según sea necesario */
+    margin: -100px 0 0 -100px; /* Centra el div horizontalmente */
+    background-image: url('https://images.emojiterra.com/google/android-11/512px/2764.png'); /* Ajusta la ruta de la imagen según su ubicación */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: heartbeat 1s infinite;
+}
+
+.text-container {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 1;
+}
+
+.big-text {
+    font-size: 3em;
+    color: rgb(27, 26, 26);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Estilos para el enlace de regreso */
+.back-link {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    text-decoration: none;
+    color: #555;
+    font-size: 1em;
+    border: 1px solid #555;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .media img {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    footer p {
+        font-size: 0.9em;
+    }
+    .heartbeat {
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te amo </title>
+    <link rel="stylesheet" href="diseño css/main.css">
+</head>
+<body class="body">
+    <div class="container">
+        <a href="main.html" class="back-link">Regresar a la carta</a>
+        <header>
+            <h1></h1>
+        </header>
+        <main>
+            <div class="heartbeat"></div>
+            <div class="text-container">
+                <p class="big-text" id="big-text">Eres el gran amor <br> mi vida.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "Eres el gran amor de mi vida.";
+            let index = 0;
+            const speed = 100;
+            const element = document.getElementById("big-text");
+
+            function typeWriter() {
+                if (index < text.length) {
+                    element.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+
+            element.innerHTML = ""; // Clear existing text
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
