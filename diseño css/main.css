@@ -10,7 +10,7 @@ body {
 .containers {
     max-width: 800px;
     margin: 40px auto;
-    padding: 40px ;
+    padding: 40px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: rgb(252, 199, 239);
@@ -35,10 +35,11 @@ header h1 {
 }
 
 .media img {
-    max-width: 100%;
+    max-width: 30%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     flex: 1 1 45%;
+    margin-right: 5px;
 }
 
 footer p {
@@ -52,27 +53,7 @@ footer p {
     opacity: 0;
 }
 
-
-
-/* styles.css */
-
-.body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e7e7e7;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 40px auto ;
-    padding: 70px 60px 400px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-
+/* Estilos para main */
 main {
     position: relative;
     text-align: center;
@@ -82,11 +63,11 @@ main {
     position: absolute;
     top: 60%;
     left: 40%;
-    padding-top:200px ;
-    width: 400px; /* Ajusta el tamaño según sea necesario */
-    height: 400px; /* Ajusta el tamaño según sea necesario */
-    margin: -100px 0 0 -100px; /* Centra el div horizontalmente */
-    background-image: url('https://images.emojiterra.com/google/android-11/512px/2764.png'); /* Ajusta la ruta de la imagen según su ubicación */
+    padding-top: 200px;
+    width: 400px;
+    height: 400px;
+    margin: -100px 0 0 -100px;
+    background-image: url('https://images.emojiterra.com/google/android-11/512px/2764.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -141,7 +122,7 @@ main {
 /* Responsive Design */
 
 @media (max-width: 768px) {
-    .container {
+    .containers {
         padding: 10px;
     }
 
@@ -168,3 +149,4 @@ main {
         margin: -75px 0 0 -75px;
     }
 }
+
