@@ -32,45 +32,43 @@ function fadeIn(element) {
 }
 // script.js
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    const paragraph = document.getElementById('paragraph');
-    const text1 = paragraph.innerHTML;
-    paragraph.innerHTML = '';
-    paragraph.style.opacity = 1;
+    const paragraphs = [
+        document.getElementById('paragraph1'),
+        document.getElementById('paragraph2'),
+        document.getElementById('paragraph3'),
+        document.getElementById('paragraph4'),
+        document.getElementById('paragraph5'),
+        document.getElementById('paragraph6')
+    ];
 
+    const texts = paragraphs.map(p => p.innerHTML);
+    paragraphs.forEach(p => p.innerHTML = '');
     let i = 0;
-    const speed = 20;
+    const speed = 20; // Ajusta la velocidad de la animación aquí
 
-    function typeWriter1(callback) {
-        if (i < text1.length) {
-            paragraph.innerHTML += text1.charAt(i);
-            i++;
-            setTimeout(() => typeWriter1(callback), speed);
-        } else {
-            callback();
+    function typeWriter(paragraphIndex) {
+        if (paragraphIndex < paragraphs.length) {
+            let j = 0;
+            const currentParagraph = paragraphs[paragraphIndex];
+            const currentText = texts[paragraphIndex];
+            currentParagraph.style.opacity = 1;
+
+            function writeCharacter() {
+                if (j < currentText.length) {
+                    currentParagraph.innerHTML += currentText.charAt(j);
+                    j++;
+                    setTimeout(writeCharacter, speed);
+                } else {
+                    currentParagraph.style.opacity = 1; // Mostrar el párrafo después de que la animación haya terminado
+                    typeWriter(paragraphIndex + 1); // Pasar al siguiente párrafo
+                }
+            }
+
+            writeCharacter();
         }
     }
 
-    typeWriter1(() => {
-        const paragraphe = document.getElementById('paragraphe');
-        paragraphe.innerHTML = ''; // Vaciamos el texto de la segunda animación
-        paragraphe.style.opacity = 1; // Ocultamos el elemento de la segunda animación al principio
-
-        const text2 = "Segundo texto de la animación 2"; // Texto de la segunda animación
-        
-        let j = 0;
-        const speed = 20;
-
-        function typeWriter2() {
-            if (j < text2.length) {
-                paragraphe.innerHTML += text2.charAt(j);
-                j++;
-                setTimeout(typeWriter2, speed);
-            } else {
-                paragraphe.style.opacity = 1; // Mostramos el elemento de la segunda animación después de que termine la animación 1
-            }
-        }
-
-        typeWriter2();
-    });
+    typeWriter(0); // Iniciar la animación con el primer párrafo
 });
