@@ -34,21 +34,43 @@ function fadeIn(element) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const paragraph = document.getElementById('paragraph');
-    const text = paragraph.innerHTML; // Usamos innerHTML en lugar de innerText para mantener los espacios
+    const text1 = paragraph.innerHTML;
     paragraph.innerHTML = '';
     paragraph.style.opacity = 1;
 
     let i = 0;
-    const speed = 20; // Ajusta la velocidad de la animación aquí
+    const speed = 20;
 
-    function typeWriter() {
-        if (i < text.length) {
-            paragraph.innerHTML += text.charAt(i);
+    function typeWriter1(callback) {
+        if (i < text1.length) {
+            paragraph.innerHTML += text1.charAt(i);
             i++;
-            setTimeout(typeWriter, speed);
+            setTimeout(() => typeWriter1(callback), speed);
+        } else {
+            callback();
         }
     }
 
-    typeWriter();
-});
+    typeWriter1(() => {
+        const paragraphe = document.getElementById('paragraphe');
+        paragraphe.innerHTML = ''; // Vaciamos el texto de la segunda animación
+        paragraphe.style.opacity = 1; // Ocultamos el elemento de la segunda animación al principio
 
+        const text2 = "Segundo texto de la animación 2"; // Texto de la segunda animación
+        
+        let j = 0;
+        const speed = 20;
+
+        function typeWriter2() {
+            if (j < text2.length) {
+                paragraphe.innerHTML += text2.charAt(j);
+                j++;
+                setTimeout(typeWriter2, speed);
+            } else {
+                paragraphe.style.opacity = 1; // Mostramos el elemento de la segunda animación después de que termine la animación 1
+            }
+        }
+
+        typeWriter2();
+    });
+});
